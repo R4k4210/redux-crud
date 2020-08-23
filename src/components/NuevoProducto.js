@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 //Actions de redux
 import { crearNuevoProductoAction } from '../actions/productosAction';
+import { mostrarAlertaAction, ocultarAlertaAction } from '../actions/alertaActions';
 
 const NuevoProductos = ({history}) => {
 
@@ -15,7 +16,7 @@ const NuevoProductos = ({history}) => {
     //Acceder al state del store (useSelector es el hook que nos permite eso)
     const cargando = useSelector(state => state.productos.loading);
     const error = useSelector(state => state.productos.error);
-    console.log(cargando);
+    const alerta = useSelector(state => state.alerta.alerta);
 
     //Esto llama la funcion del action
     const agregarNuevoProducto = producto => dispatch(crearNuevoProductoAction(producto));
@@ -24,8 +25,18 @@ const NuevoProductos = ({history}) => {
         e.preventDefault();
 
         if(nombre.trim() === "" || precio <= 0){
+
+            const alerta = {
+                msg: "Ambos campos son obligatorios",
+                clases: 'alert alert-danger text-center text-uppercase p3'
+            }
+
+            dispatch(mostrarAlertaAction(alerta));
+
             return;
         }
+
+        dispatch(ocultarAlertaAction());
 
         agregarNuevoProducto({
             nombre,
@@ -45,6 +56,8 @@ const NuevoProductos = ({history}) => {
                         <h2 className="text-center mb-4 font-weight-bold">
                             Agregar nuevo producto
                         </h2>
+
+                        {alerta ? <p className={alerta.clases}>{alerta.msg}</p> : null}
 
                         <form onSubmit={onsubmitNuevoProducto}>
                             <div className="form-group">

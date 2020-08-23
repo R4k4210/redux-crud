@@ -1,64 +1,14 @@
 {
   "productos": [
     {
-      "id": 1,
-      "nombre": "Jugo de Zanahoria",
-      "precio": "31111"
-    },
-    {
-      "id": 2,
-      "nombre": "Jugo de Naranja",
-      "precio": "1"
-    },
-    {
-      "nombre": "Jugo de Naranja",
-      "precio": "300",
-      "id": 3
-    },
-    {
-      "nombre": "Rib Eye 800g",
-      "precio": "200",
-      "id": 4
-    },
-    {
-      "nombre": "Jugo de Fresa",
-      "precio": "200",
+      "nombre": "Primera tarea asd",
+      "precio": 123,
       "id": 5
     },
     {
-      "nombre": "Rib Eye",
-      "precio": 500,
+      "nombre": "1",
+      "precio": 2,
       "id": 6
-    },
-    {
-      "nombre": "Primer proyecto",
-      "precio": 123,
-      "id": 7
-    },
-    {
-      "nombre": "Primer proyecto",
-      "precio": 123,
-      "id": 8
-    },
-    {
-      "nombre": "Primer proyecto",
-      "precio": 123,
-      "id": 9
-    },
-    {
-      "nombre": "Primer proyecto",
-      "precio": 123,
-      "id": 10
-    },
-    {
-      "nombre": "Santiago",
-      "precio": 123,
-      "id": 11
-    },
-    {
-      "nombre": "Primera tarea",
-      "precio": 123,
-      "id": 12
     }
   ]
 }
